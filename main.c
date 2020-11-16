@@ -4,8 +4,8 @@ typedef char* string;
 
 typedef struct cartoon{
 
-char* name;
-struct cartoon* p[26];
+  string name;
+  struct cartoon* p[26];
 
 } 
 node;
@@ -45,19 +45,14 @@ int main(void) {
   f->p[14] = g;
 
   printf("%s\n\n",g->name);
+  printf("Remember to tpye in ''/0'' after findig the word\n");
 
   int i = 0;
   for (node* temp = list; temp != NULL; temp = temp->p[i]){
     
-    if(temp != NULL){
-      printf("Number: ");
-      scanf("%i", &i);
-      printf(" %s\n", temp->name);
-    }
-
-    if(temp == NULL){
-      printf(" %s\n", temp->name);
-    }
+    printf("Number: ");
+    scanf("%i", &i);
+    printf(" %s\n", temp->p[i]->name);
     
   }
 
